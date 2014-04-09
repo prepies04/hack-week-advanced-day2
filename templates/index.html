@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="jumbotron">
+  <h2>Welcome to 5C Course Reviews!</h2>
+  <p>You can read tons of reviews written about any course at the 5Cs. Search courses by major or school, and write your own reviews, too!</p>
+</div>
+<form action="" method="" class="search-box">
+  <select data-placeholder="Choose a major..." class="chosen-select major" name="major">
+    <option></option>
+  </select>
+  <select data-placeholder="Choose a school..." class="chosen-select school" name="school">
+    <option></option>
+    <option value="any">All</option>
+    <option value="PO">Pomona</option>
+    <option value="HMC">Harvey Mudd</option>
+    <option value="CMC">Claremont McKenna</option>
+    <option value="SC">Scripps</option>
+    <option value="PZ">Pitzer</option>
+  </select>
+  <button type="submit"  class="btn btn-warning btn-lg">Search!</button>
+</form>
+{% endblock %}
+
+{% block scripts %}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="{{ url_for('static', filename='chosen/chosen.jquery.js') }}"></script>
+<script>
+    $('.chosen-select').chosen();
+</script>
+{% endblock %}
